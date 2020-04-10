@@ -1,0 +1,30 @@
+﻿@model string[]
+
+@{
+  ViewBag.Title = "NamesArray";
+  Layout = null;
+}
+
+@if (Model.Length == 0)
+{
+  <form asp-action="NamesArray" method="post">
+    @for (int i = 0; i < 3; i++)
+    {
+      <div class="form-group">
+        <label>Name @(i + 1):</label>
+        <input id="names" name="names" class="form-control" />
+      </div>
+    }
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+}
+else
+{
+  <table class="table table-sm table-bordered table-striped">
+    @foreach (string name in Model)
+    {
+      <tr><th>Name:</th><td>@name</td></tr>
+    }
+  </table>
+  <a asp-action="NamesArray" class="btn btn-primary">Back</a>
+}
