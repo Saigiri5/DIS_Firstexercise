@@ -6,6 +6,7 @@ namespace Routes_Filters_ModelBinding_Validation.Models
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public string GroupName { get; set; }
+        public string Class { get; set; }
     }
     
 }
